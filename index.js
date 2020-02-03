@@ -146,7 +146,7 @@ const requireAndAskPermissions = async (options: Options | MultipleOptions): Pro
       if (result === PermissionsAndroid.RESULTS.GRANTED) {
         return Promise.resolve();
       }
-      throw new Error('Write Permission not available');
+      throw new Error(result);
     } catch (e) {
       return Promise.reject(e);
     }
